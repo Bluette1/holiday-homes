@@ -38,6 +38,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'devise'
+gem 'rack-cors'
 gem 'rdoc'
 gem 'rspec-rails'
 gem 'rubocop', '~>0.81.0'

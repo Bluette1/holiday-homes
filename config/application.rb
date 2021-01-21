@@ -36,5 +36,12 @@ module HolidayHomes
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.generators.system_tests = nil
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+         origins '*'
+         resource '*', :headers => :any, :methods => [:get, :post, :delete, :options, :put, :patch]
+       end
+    end
   end
 end
