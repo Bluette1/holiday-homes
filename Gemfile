@@ -40,3 +40,5 @@ end
 gem 'rdoc'
 gem 'rubocop', '~>0.81.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'rspec-rails'
+gem 'devise'

@@ -14,7 +14,7 @@
 - The Rails framework was used to build this project.
 
 ## Live Demo
-[Live Demo]()
+[Live Demo](https://holiday-homes-api.herokuapp.com/)
 
 ### Run instructions 
 -  You can clone the GitHub repo and type the following commands in the terminal to run the app locally 

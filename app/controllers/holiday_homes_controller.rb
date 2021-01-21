@@ -1,0 +1,2 @@
+class HolidayHomesController < ApplicationController
+end
