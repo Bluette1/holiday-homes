@@ -1,14 +1,17 @@
 class HolidayHomesController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
   before_action :set_holiday_home, only: [:destroy]
 
+  before_action :authenticate_user!
+
   def index
-    render json: holiday_home.all
+    render json: HolidayHome.all
   end
 
   def create
-    @holiday_home = holiday_home.create!(holiday_home_params)
+    # @reading = current_user.readings.build(book_id: params[:book_id])
+    holiday_home = current_user.holiday_homes.build(holiday_home_params)
+    @holiday_home = holiday_home.save
+    # @holiday_home = holiday_home.create!(holiday_home_params)
     render json: @holiday_home
   end
 
@@ -27,6 +30,6 @@ class HolidayHomesController < ApplicationController
   end
 
   def set_holiday_home
-    @holiday_home = holiday_home.find(params[:id].to_i)
+    @holiday_home = HolidayHome.find(params[:id].to_i)
   end
 end

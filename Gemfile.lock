@@ -177,6 +177,10 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
     ruby-progressbar (1.10.1)
+    simple_token_authentication (1.17.0)
+      actionmailer (>= 3.2.6, < 7)
+      actionpack (>= 3.2.6, < 7)
+      devise (>= 3.2, < 6)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -211,6 +215,7 @@ DEPENDENCIES
   rdoc
   rspec-rails
   rubocop (~> 0.81.0)
+  simple_token_authentication
   spring
   tzinfo-data
 
