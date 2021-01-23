@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
 
   root to: 'holiday_homes#index'
-  resources :holiday_homes, only: %i[create index destroy]
+  resources :favourites, only: [:destroy, :index, :update], controller: 'favourites'
+  resources :holiday_homes, only: %i[create index destroy update] do
+    resources :favourites, only: [:create], controller: 'favourites'
+  end
   resources :categories, only: %i[index]
 end
