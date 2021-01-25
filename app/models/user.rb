@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :holiday_homes, foreign_key: :creator_id, class_name: 'HolidayHome', dependent: :destroy
+  has_many :favourites, foreign_key: :user_id, class_name: 'Favourite', dependent: :destroy
 end

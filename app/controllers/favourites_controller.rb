@@ -18,7 +18,7 @@ class FavouritesController < ApplicationController
   end
 
   def update
-    favourite = favourite.find_by(id: params[:id], user: current_user)
+    favourite = Favourite.find_by(id: params[:id], user: current_user)
     if favourite
       favourite.update(params[:favourite])
       render json: favourite
@@ -28,7 +28,7 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    favourite = favourite.find_by(id: params[:id], user: current_user)
+    favourite = Favourite.find_by(id: params[:id], user: current_user)
     if favourite
       favourite.destroy
       head :no_content
