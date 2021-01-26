@@ -8,8 +8,8 @@ class HolidayHomesController < ApplicationController
   end
 
   def create
-    holiday_home = current_user.holiday_homes.build(holiday_home_params)
-    @holiday_home = holiday_home.save
+    @holiday_home = current_user.holiday_homes.build(holiday_home_params)
+    @holiday_home.save
     render json: @holiday_home
   end
 
@@ -23,7 +23,7 @@ class HolidayHomesController < ApplicationController
 
   def holiday_home_params
     params.require(:holiday_home).permit(
-      :title, :owner, :manager, :address, :image_url, :description, :email, :phone, :author, :category
+      :title, :owner, :manager, :address, :image_url, :description, :email, :phone, :author, :category, :rating, :price
     )
   end
 
