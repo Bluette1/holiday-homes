@@ -22,8 +22,9 @@ class HolidayHomesController < ApplicationController
   private
 
   def holiday_home_params
-    params.require(:holiday_home).permit(
-      :title, :owner, :manager, :address, :image_url, :description, :email, :phone, :author, :category, :rating, :price
+    params.permit(
+      :title, :owner, :manager, :address, :image_url, :description, :email, :phone,
+      :author, :category, :rating, :price, :image
     )
   end
 

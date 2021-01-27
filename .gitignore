@@ -29,3 +29,5 @@
 node_modules
 
 html/
+
+config/cloudinary.yml

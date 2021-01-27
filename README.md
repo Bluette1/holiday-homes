@@ -32,6 +32,9 @@ Make sure the server is running
 
 - Follow the links on the [holiday-homes website](https://github.com/Bluette1/holiday-homes-website) to access the available features.
 
+## Generate documentation
+Run `bundle exec rdoc` in the terminal.
+
 ## Deployment
 - You can deploy on [Heroku](https://devcenter.heroku.com/categories/ruby-support).
 
