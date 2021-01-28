@@ -38,6 +38,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'devise'
+gem 'cloudinary'
 gem 'paperclip'
 gem 'paperclip-cloudinary'
 gem 'rack-cors'
