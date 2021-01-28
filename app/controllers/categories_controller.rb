@@ -2,12 +2,12 @@ class CategoriesController < ApplicationController
   def index
     render json: {
       categories: [
-        'cottage',
-        'mansion',
-        'lodge',
-        'country home',
-        'chalet',
-        'log cabin'
+        'Cottage',
+        'Mansion',
+        'Lodge',
+        'Country home',
+        'Chalet',
+        'Log cabin'
       ]
     }
   end
