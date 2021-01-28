@@ -33,15 +33,15 @@ end
 group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
   gem 'rdoc'
   gem 'rspec-rails', '~> 4.0.0'
   gem 'rubocop', '~>0.81.0'
+  gem 'spring'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'devise'
 gem 'cloudinary'
+gem 'devise'
 gem 'paperclip'
 gem 'paperclip-cloudinary'
 gem 'rack-cors'

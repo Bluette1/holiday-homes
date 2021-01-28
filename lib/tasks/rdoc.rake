@@ -1,7 +1,7 @@
 begin
-require 'rdoc/task'
+  require 'rdoc/task'
 rescue LoadError => e
-  raise e unless ENV['RAILS_ENV'] == "production"
+  raise e unless ENV['RAILS_ENV'] == 'production'
 end
 
 desc 'Generate Rails API Documentation with RDoc'
