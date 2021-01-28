@@ -246,7 +246,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.1.1)
   rdoc
-  rspec-rails
+  rspec-rails (~> 4.0.0)
   rubocop (~> 0.81.0)
   simple_token_authentication
   spring
