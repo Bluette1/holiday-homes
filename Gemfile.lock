@@ -236,7 +236,6 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
-  cloudinary
   devise
   listen (~> 3.3)
   paperclip

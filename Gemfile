@@ -37,7 +37,6 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'cloudinary'
 gem 'devise'
 gem 'paperclip'
 gem 'paperclip-cloudinary'
