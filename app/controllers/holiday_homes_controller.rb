@@ -38,10 +38,13 @@ class HolidayHomesController < ApplicationController
     @holiday_home = HolidayHome.find(params[:id].to_i)
   end
 
-  def search(key, holiday_homes)
+  def search(search_key, holiday_homes)
+    key = search_key.downcase.gsub(/\s/, '')
     result = []
     holiday_homes.each do |holiday_home|
-      result << holiday_home if holiday_home.title == key
+      holiday_home_title = holiday_home.title
+      holiday_home_title = holiday_home_title.downcase.gsub(/\s/, '')
+      result << holiday_home if holiday_home_title == key
     end
     result
   end
