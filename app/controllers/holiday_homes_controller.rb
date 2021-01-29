@@ -44,7 +44,9 @@ class HolidayHomesController < ApplicationController
     holiday_homes.each do |holiday_home|
       holiday_home_title = holiday_home.title
       holiday_home_title = holiday_home_title.downcase.gsub(/\s/, '')
-      result << holiday_home if holiday_home_title == key
+
+      Regexp.new(key).match(holiday_home_title)
+      result << holiday_home unless Regexp.new(key).match(holiday_home_title).nil?
     end
     result
   end
