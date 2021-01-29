@@ -4,7 +4,13 @@ class HolidayHomesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    render json: HolidayHome.all
+    holiday_homes = HolidayHome.all
+    search_params = params[:search_params]
+    if search_params != ''
+      render json: search(search_params, holiday_homes)
+    else
+      render json: holiday_homes
+    end
   end
 
   def create
@@ -24,11 +30,19 @@ class HolidayHomesController < ApplicationController
   def holiday_home_params
     params.permit(
       :title, :owner, :manager, :address, :image_url, :description, :email, :phone,
-      :author, :category, :rating, :price, :image
+      :author, :category, :rating, :price, :image, search_params
     )
   end
 
   def set_holiday_home
     @holiday_home = HolidayHome.find(params[:id].to_i)
+  end
+
+  def search(key, holiday_homes)
+    result = []
+    holiday_homes.each do |holiday_home|
+      result << holiday_home if holiday_home.title == key
+    end
+    result
   end
 end
