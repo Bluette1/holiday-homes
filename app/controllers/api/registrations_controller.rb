@@ -21,11 +21,11 @@ class Api::RegistrationsController < Devise::RegistrationsController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
+    params.permit(:name, :username, :email, :password, :password_confirmation, :photo)
   end
 
   def ensure_params_exist
-    return if params[:user].present?
+    return if params[:username].present?
 
     render json: {
       messages: 'Missing Params',

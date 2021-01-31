@@ -4,12 +4,12 @@ class HolidayHomesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    holiday_homes = HolidayHome.all
+    holiday_homes = HolidayHome.all.includes(:creator)
     search_params = params[:search_params]
     if search_params != ''
-      render json: search(search_params, holiday_homes)
+      render json: map_to_res(search(search_params, holiday_homes))
     else
-      render json: holiday_homes
+      render json: map_to_res(holiday_homes)
     end
   end
 
@@ -53,5 +53,14 @@ class HolidayHomesController < ApplicationController
       result << holiday_home unless Regexp.new(key).match(holiday_home_title).nil?
     end
     result
+  end
+
+  def map_to_res(holiday_homes)
+    holiday_homes.map do |holiday_home|
+      {
+        holiday_home: holiday_home,
+        creator: holiday_home.creator
+      }
+    end
   end
 end
