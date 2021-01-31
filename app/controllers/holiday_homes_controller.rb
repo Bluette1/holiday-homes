@@ -16,13 +16,13 @@ class HolidayHomesController < ApplicationController
   def create
     @holiday_home = current_user.holiday_homes.build(holiday_home_params)
     
-    if (@holiday_home.save) {
+    if @holiday_home.save
       render json: @holiday_home
-    } else {
+    else 
       p @holiday_home.errors.full_messages
 
       result json: @holiday_home.errors.full_messages
-    }
+    end
   end
 
   # DELETE /holiday_homes:id
