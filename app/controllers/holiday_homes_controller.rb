@@ -15,13 +15,11 @@ class HolidayHomesController < ApplicationController
 
   def create
     @holiday_home = current_user.holiday_homes.build(holiday_home_params)
-    
+
     if @holiday_home.save
       render json: @holiday_home
-    else 
-      p @holiday_home.errors.full_messages
-
-      result json: @holiday_home.errors.full_messages
+    else
+      render json: @holiday_home.errors.full_messages
     end
   end
 
@@ -36,7 +34,7 @@ class HolidayHomesController < ApplicationController
   def holiday_home_params
     params.permit(
       :title, :owner, :manager, :address, :image_url, :description, :email, :phone,
-      :author, :category, :rating, :price, :image, search_params
+      :author, :category, :rating, :price, :image
     )
   end
 
