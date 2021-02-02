@@ -32,9 +32,9 @@ RSpec.describe HolidayHomesController, type: :controller do
 
   describe 'retrieves holiday homes' do
     log_in_usr :creator, 'jane', 'jane@gmail.com', 'jenny_creator'
-    creator = User.find_by(name: 'jane', email: 'jane@gmail.com')
 
     it 'successfully creates available holiday homes' do
+      creator = User.find_by(name: 'jane', email: 'jane@gmail.com')
       HolidayHome.create({
                            creator: creator, title: 'some title',
                            rating: 3, category: 'Mansion', price: 1000, address: 'address'
@@ -42,7 +42,7 @@ RSpec.describe HolidayHomesController, type: :controller do
 
       request.headers['Authorization'] = creator.authentication_token
 
-      post :index, params: { search_params: '' }
+      get :index, params: { search_params: '' }
       expect(response.code).to eq '200'
     end
   end
