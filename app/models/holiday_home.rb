@@ -1,5 +1,12 @@
 class HolidayHome < ApplicationRecord
   belongs_to :creator, class_name: 'User'
+  has_many :favourites, dependent: :destroy
+
+  validates :title, presence: true
+  validates :rating, presence: true
+  validates :price, presence: true
+  validates :category, presence: true
+
   has_attached_file :image,
                     storage: :cloudinary,
                     path: ':id/:style/:filename',

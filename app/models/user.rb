@@ -8,6 +8,11 @@ class User < ApplicationRecord
   has_many :holiday_homes, foreign_key: :creator_id, class_name: 'HolidayHome', dependent: :destroy
   has_many :favourites, foreign_key: :user_id, class_name: 'Favourite', dependent: :destroy
 
+  validates :username, presence: true
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :password, presence: true, length: { minimum: 6 }
+
   has_attached_file :photo,
                     storage: :cloudinary,
                     path: ':id/:style/:filename',
