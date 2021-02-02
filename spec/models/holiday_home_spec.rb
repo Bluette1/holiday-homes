@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe HolidayHome, type: :model do
-  # validates :title, presence: true
-  # validates :rating, presence: true
-  # validates :price, presence: true
-  # validates :category, presence: true
   describe 'Validations' do
     let(:creator) do
       User.create(username: 'creator', name: 'Good Author', email: 'email', password: 'password')

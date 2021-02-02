@@ -13,7 +13,7 @@ class FavouritesController < ApplicationController
     if @favourite.save
       render json: @favourite
     else
-      head :bad_request
+      render json: @favourite.errors.full_messages
     end
   end
 
