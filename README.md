@@ -1,6 +1,7 @@
 # holiday-homes
 
-![CI Status Badge](https://github.com/Bluette1/holiday-homes/workflows/Linters/badge.svg)
+![Linters](https://github.com/Bluette1/holiday-homes/workflows/Linters/badge.svg)
+![Test with rspec](https://github.com/Bluette1/holiday-homes/workflows/Test%20with%20rspec/badge.svg)
 
 ![demopage](./public/screenshot.png)
 
@@ -34,6 +35,17 @@ Make sure the server is running
 
 ## Generate documentation
 Run `bundle exec rdoc` in the terminal.
+
+### [Paperclip Cloudinary](https://github.com/GoGoCarl/paperclip-cloudinary) Setup
+- Create a [Cloudinary](https://cloudinary.com/) account.
+- Afterwards
+
+``Download your configuration YAML file and place it in your config directory. You can grab it here:
+
+   https://cloudinary.com/console/cloudinary.yml
+
+This will enable the Cloudinary gem to pick up your configuration automatically.```
+
 
 ## Deployment
 - You can deploy on [Heroku](https://devcenter.heroku.com/categories/ruby-support).
