@@ -19,7 +19,7 @@ class HolidayHomesController < ApplicationController
     if @holiday_home.save
       render json: @holiday_home
     else
-      render json: @holiday_home.errors.full_messages
+      render json: @holiday_home.errors, status: :unprocessable_entity
     end
   end
 

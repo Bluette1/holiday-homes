@@ -13,7 +13,7 @@ class FavouritesController < ApplicationController
     if @favourite.save
       render json: @favourite
     else
-      render json: @favourite.errors.full_messages
+      render json: @favourite.errors, status: :unprocessable_entity
     end
   end
 

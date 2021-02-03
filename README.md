@@ -1,7 +1,6 @@
 # holiday-homes
 
 ![Linters](https://github.com/Bluette1/holiday-homes/workflows/Linters/badge.svg)
-![Test with rspec](https://github.com/Bluette1/holiday-homes/workflows/Test%20with%20rspec/badge.svg)
 
 ![demopage](./public/screenshot.png)
 
