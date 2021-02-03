@@ -43,7 +43,8 @@ class FavouritesController < ApplicationController
     favourites.map do |favourite|
       {
         holiday_home: favourite.holiday_home,
-        id: favourite[:id]
+        id: favourite[:id],
+        creator: favourite.holiday_home.creator
       }
     end
   end
