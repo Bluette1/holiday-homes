@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "stylelint-f": "npx stylelint --fix '**/*.{css,scss}'",
+    "rubocop-f": "rubocop --except Style/FrozenStringLiteralComment -a"
+  },
+  "devDependencies": {
+    "stylelint": "13.3.x",
+    "stylelint-config-standard": "20.0.x",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "3.17.x"
+  }
+}
