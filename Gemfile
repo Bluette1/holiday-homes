@@ -44,6 +44,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'cloudinary'
 gem 'devise'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 gem 'msgpack', '~> 1.4.2'
 gem 'paperclip'
 gem 'paperclip-cloudinary'

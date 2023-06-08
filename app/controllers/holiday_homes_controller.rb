@@ -1,7 +1,7 @@
 class HolidayHomesController < ApplicationController
   before_action :set_holiday_home, only: [:destroy]
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: %i[create destroy]
 
   def index
     holiday_homes = HolidayHome.all.includes(:creator)
